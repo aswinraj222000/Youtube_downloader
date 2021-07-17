@@ -1,0 +1,13 @@
+import pytube
+from pytube import YouTube
+link = input("paste your link here ")
+url = link
+youtube = pytube.YouTube(url)
+streams=youtube.streams.all()
+
+for i in streams:
+    print(i)
+itag = input("print your itag here")
+video = youtube.streams.get_by_itag(itag)
+video.download("")
+print ('done')
